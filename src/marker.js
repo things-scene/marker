@@ -4,10 +4,7 @@ export default class Marker extends Rect {
 
   _draw(context) {
     var {
-      value = 0,
-      hidden = false,
-      fillStyle,
-      blankStrokeStyle,
+      innerCircleFillStyle,
       top,
       left,
       width,
@@ -16,27 +13,27 @@ export default class Marker extends Rect {
 
     context.translate(left, top)
 
+    // 마커 모양 그리기
     context.beginPath()
-    context.lineJoin = "miter"
 
-    context.moveTo(width / 2, height)
-    context.bezierCurveTo(width / 2, height * 3 / 4, 0, height / 2, 0, height / 4)
+    context.moveTo(width / 2, height * 0.9)
+    context.bezierCurveTo(width / 2.3, height * 0.6, 0, height / 2, 0, height / 4)
     
     context.ellipse(width / 2, height / 4, width / 2, height / 4, 0, Math.PI * 1, Math.PI * 0)
     
-    context.bezierCurveTo(width, height / 2, width / 2, height * 3 / 4 , width / 2, height)
-
-    // context.lineTo(width / 2, height)
-
-    // context.quadraticCurveTo(width / 2, height * 3 / 4, width / 2, height)
-
-    // context.quadraticCurveTo(width / 2, height * 4 / 3, 0, height / 4)
+    context.bezierCurveTo(width, height / 2, width / 1.7, height * 0.6 , width / 2, height * 0.9)
 
     context.closePath()
 
     this.drawFill(context)
     this.drawStroke(context)
     
+    // 안쪽 원 그리기
+    context.beginPath()
+    context.ellipse(width / 2, height / 4, width * 0.18, height * 0.09, 0, 0, Math.PI * 2)
+    context.fillStyle = innerCircleFillStyle
+    context.fill()
+
     context.translate(-left, -top)
   }
   get controls() {}
