@@ -18,16 +18,16 @@ export default class Marker extends Rect {
 
     context.moveTo(width / 2, height * 0.9)
     context.bezierCurveTo(width / 2.3, height * 0.6, 0, height / 2, 0, height / 4)
-    
+
     context.ellipse(width / 2, height / 4, width / 2, height / 4, 0, Math.PI * 1, Math.PI * 0)
-    
+
     context.bezierCurveTo(width, height / 2, width / 1.7, height * 0.6 , width / 2, height * 0.9)
 
     context.closePath()
 
     this.drawFill(context)
     this.drawStroke(context)
-    
+
     // 안쪽 원 그리기
     context.beginPath()
     context.ellipse(width / 2, height / 4, width * 0.18, height * 0.09, 0, 0, Math.PI * 2)
@@ -37,6 +37,10 @@ export default class Marker extends Rect {
     context.translate(-left, -top)
   }
   get controls() {}
+
+  _post_draw(context){
+    this.drawText(context)
+  }
 }
 
 Component.register('marker', Marker)
