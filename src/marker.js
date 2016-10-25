@@ -1,5 +1,17 @@
 var { Component, Rect } = scene
 
+const NATURE = {
+  mutable: false,
+  resizable: true,
+  rotatable: true,
+  properties : [{
+    type: 'color',
+    label: 'innerCircleFillStyle',
+    name: 'innerCircleFillStyle',
+    property: 'innerCircleFillStyle'
+  }]
+}
+
 export default class Marker extends Rect {
 
   _draw(context) {
@@ -40,6 +52,10 @@ export default class Marker extends Rect {
 
   _post_draw(context){
     this.drawText(context)
+  }
+
+  get nature(){
+    return NATURE
   }
 }
 
