@@ -1,4 +1,7 @@
-var { Component, Rect } = scene
+/*
+ * Copyright © HatioLab Inc. All rights reserved.
+ */
+ var { Component, Rect } = scene
 
 const NATURE = {
   mutable: false,
