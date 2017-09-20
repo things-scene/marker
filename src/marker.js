@@ -1,15 +1,18 @@
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
- var { Component, Rect } = scene
+var {
+  Component,
+  Rect
+} = scene
 
 const NATURE = {
   mutable: false,
   resizable: true,
   rotatable: true,
-  properties : [{
+  properties: [{
     type: 'color',
-    label: 'innerCircleFillStyle',
+    label: 'inner-circle-fill-style',
     name: 'innerCircleFillStyle',
     property: 'innerCircleFillStyle'
   }]
@@ -36,7 +39,7 @@ export default class Marker extends Rect {
 
     context.ellipse(width / 2, height / 4, width / 2, height / 4, 0, Math.PI * 1, Math.PI * 0)
 
-    context.bezierCurveTo(width, height / 2, width / 1.7, height * 0.6 , width / 2, height * 0.9)
+    context.bezierCurveTo(width, height / 2, width / 1.7, height * 0.6, width / 2, height * 0.9)
 
     context.closePath()
 
@@ -53,13 +56,14 @@ export default class Marker extends Rect {
   }
   get controls() {}
 
-  _post_draw(context){
+  _post_draw(context) {
     this.drawText(context)
   }
 
-  get nature(){
+  get nature() {
     return NATURE
   }
 }
 
 Component.register('marker', Marker)
+
