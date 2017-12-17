@@ -1,8 +1,9 @@
 {
-  "name": "things-scene-marker",
+  "name": "@things-elements/things-scene-marker",
+  "falt": true,
   "version": "2.0.3",
   "description": "An element providing a starting point for your own reusable Polymer elements.",
-  "main": "index.js",
+  "main": "things-scene-marker-min.js",
   "directories": {
     "test": "test"
   },
