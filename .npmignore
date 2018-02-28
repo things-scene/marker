@@ -1,0 +1,13 @@
+DEPLOYMENT.md
+DEVELOPMENT.md
+dist/
+npm-debug.log
+node_modules
+.babelrc
+.editorconfig
+.gitignore
+.git
+boards
+bower_components
+things-scene-marker.js
+things-scene-marker-min.js
