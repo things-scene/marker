@@ -2,7 +2,7 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
- import { Component, Rect } from '@hatiolab/things-scene'
+import { Component, Rect } from '@hatiolab/things-scene'
 
 const NATURE = {
   mutable: false,
