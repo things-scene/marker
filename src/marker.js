@@ -20,8 +20,9 @@ const NATURE = {
 
 export default class Marker extends Rect {
   _draw(context) {
-    var { innerCircleFillStyle, top, left, width, height } = this.model
-
+    var { innerCircleFillStyle } = this.model
+    var { top, left, width, height } = this.bounds
+    
     context.translate(left, top)
 
     // 마커 모양 그리기
