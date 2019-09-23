@@ -1,5 +1,3 @@
-import locales from './locales';
-
 import icon from './assets/marker.png';
 
 var templates = [{
@@ -23,6 +21,5 @@ var templates = [{
 }];
 
 export default {
-  locales,
   templates
 };
