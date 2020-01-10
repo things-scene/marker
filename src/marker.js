@@ -19,10 +19,13 @@ const NATURE = {
 }
 
 export default class Marker extends Rect {
+  is3dish() {
+    return false
+  }
+
   _draw(context) {
     var { innerCircleFillStyle } = this.model
     var { top, left, width, height } = this.bounds
-    
     context.translate(left, top)
 
     // 마커 모양 그리기
@@ -30,14 +33,7 @@ export default class Marker extends Rect {
 
     context.moveTo(width / 2, height * 0.9)
 
-    context.bezierCurveTo(
-      width / 2.3,
-      height * 0.6,
-      0,
-      height / 2,
-      0,
-      height / 4
-    )
+    context.bezierCurveTo(width / 2.3, height * 0.6, 0, height / 2, 0, height / 4)
 
     context.ellipse(
       width / 2,
@@ -50,14 +46,7 @@ export default class Marker extends Rect {
       Math.sign(width) * Math.sign(height) == -1
     )
 
-    context.bezierCurveTo(
-      width,
-      height / 2,
-      width / 1.7,
-      height * 0.6,
-      width / 2,
-      height * 0.9
-    )
+    context.bezierCurveTo(width, height / 2, width / 1.7, height * 0.6, width / 2, height * 0.9)
 
     context.closePath()
 
@@ -66,15 +55,7 @@ export default class Marker extends Rect {
 
     // 안쪽 원 그리기
     context.beginPath()
-    context.ellipse(
-      width / 2,
-      height / 4,
-      Math.abs(width * 0.18),
-      Math.abs(height * 0.09),
-      0,
-      0,
-      Math.PI * 2
-    )
+    context.ellipse(width / 2, height / 4, Math.abs(width * 0.18), Math.abs(height * 0.09), 0, 0, Math.PI * 2)
     context.fillStyle = innerCircleFillStyle
     context.fill()
 
